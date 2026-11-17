@@ -32,6 +32,6 @@ Part of *Human-Focused Design in the Age of AI*.
 
 ## Play online
 
-- https://sound2side.github.io/hfd-card-game/ (GitHub Pages, from `index.html` on `main`)
+- https://sound2side.github.io/HFD-card-game/ (GitHub Pages, from `index.html` on `main`)
 
 *Design conditions, not answers.*
