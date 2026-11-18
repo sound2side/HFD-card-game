@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>HFD Card Game</title>
+<title>WonderWorlds</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -40,6 +40,7 @@ header p{font-family:Newsreader,Georgia,serif;font-style:italic;color:var(--soft
 .body{font-size:15px;line-height:1.45;text-wrap:pretty}
 .q{font-family:Newsreader,Georgia,serif;font-style:italic;font-weight:500;font-size:19px;line-height:1.3;color:var(--c);text-wrap:balance}
 .tq{font-family:Newsreader,Georgia,serif;font-weight:600;font-size:19px;line-height:1.3;text-wrap:balance}
+.world{font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--c);margin:0 0 -4px!important}
 .kw{font-size:13px;font-weight:700;color:#655D7C;margin-top:4px!important}
 .back{cursor:pointer;background:var(--c);border-color:var(--c);color:var(--paper);box-shadow:inset 0 0 0 8px var(--c),inset 0 0 0 9px var(--gold),inset 0 0 0 13px var(--c),inset 0 0 0 14px var(--gold),0 16px 30px -18px rgba(40,30,20,.55);aspect-ratio:0.72;align-items:center;justify-content:center;gap:14px}
 .back .med{width:96px;height:96px;border-radius:50%;border:2px solid var(--gold);box-shadow:inset 0 0 0 5px var(--c),inset 0 0 0 6px var(--gold);display:flex;align-items:center;justify-content:center}
@@ -98,7 +99,7 @@ footer{text-align:center;color:var(--soft);font-size:13px;margin-top:28px}
 <body>
 <div class="wrap">
 <header>
-  <h1>Human-Focused Design Card Game</h1>
+  <h1>WonderWorlds</h1>
   <p>Conditions, not answers.</p>
 </header>
 <nav class="track" id="track"></nav>
@@ -108,7 +109,7 @@ footer{text-align:center;color:var(--soft);font-size:13px;margin-top:28px}
 <script>
 {
 const SCEN=[["The Upside-Down City", "Everything here is upside down. A magic robot helps everyone."], ["Dragon School", "Young dragons learn to fly and breathe fire. An AI teacher helps."], ["The Toy Hospital", "Broken toys come here to be fixed. A clever robot can fix almost anything."], ["The Underwater Kingdom", "Mermaids and sea creatures live together. A smart machine runs the kingdom."], ["The Never-Ending Funfair", "A robot knows exactly what makes every visitor happy."], ["The Moon Village", "Aliens of every shape are building a village with AI."], ["The Cloud Bakery", "Bread floats on fluffy clouds. A robot baker makes a perfect loaf every time."], ["The Jungle Library", "Books grow on trees. A robot librarian knows what everyone should read."], ["The Snow Post Office", "Letters travel by sledge. A robot writes and delivers them all."], ["The Giant's Garden", "Vegetables grow as big as houses. A robot gardener does all the watering."], ["The Pirate Ship", "A crew sails the seven seas. A robot navigator always knows the way."], ["The Music Mountain", "Every rock sings a note. A robot can play any song perfectly."], ["The Sleepy Forest", "The animals sleep all winter. A robot looks after the forest for them."]];
-const DIL=[["The Dragon Who Can't Breathe Fire", "One dragon can only blow bubbles. The AI can give her a special lesson, but she'd learn alone.", "Her own way alone, or the same way together?"], ["The Perfect Painting", "A magic brush fixes every mistake. If your painting wins, your class gets a trip.", "Use the brush, or keep your mistakes?"], ["The Broken Castle", "A robot knocked down the children's castle. It was following one child's instructions.", "Who should rebuild it? Is the robot responsible?"], ["The Happiness Bubbles", "A robot gives each child a perfect bubble world. One lonely child loves hers.", "Stay in the bubble, or come out to play?"], ["The Birthday Surprise", "A robot can plan the perfect party. But the child wanted friends to plan it, and last year they forgot.", "A perfect party, or one made with care?"], ["The Shortcut Spell", "A robot knows a shortcut past the hard parts. One friend is very tired.", "Take the shortcut, or keep the adventure?"], ["The Thank-You Letter", "A robot can write a perfect thank-you letter to your grandma. Your handwriting is very messy.", "The robot's perfect letter, or your messy one?"], ["The Team Picker", "A robot picks perfectly fair teams at break time. But best friends end up on different sides.", "Fair teams from the robot, or choose for yourselves?"], ["The Secret Diary", "A robot could read your diary to know when you are sad, and cheer you up.", "Should the robot read it to help you?"], ["The Lost Puppy", "A robot can find the lost puppy in one minute. The children made posters to search together.", "Let the robot find it, or search together?"], ["The Homework Helper", "A robot gives you the answer the moment you are stuck. You would finish fast, but might not learn.", "Ask the robot, or stay stuck a little longer?"], ["The Translator Hat", "A magic hat lets a new classmate talk to everyone at once. But nobody would learn her language.", "Wear the hat, or learn each other's words?"], ["The Wilting Plant", "A robot can make the class garden perfect. One plant the children grew themselves is wilting.", "Let the robot save it, or look after it yourselves?"]];
+const DIL=[["The Shortcut Spell", "The robot knows a shortcut through the upside-down streets, past all the hard parts. One friend is very tired.", "Take the shortcut, or keep the adventure?", "The Upside-Down City"], ["The Dragon Who Can't Breathe Fire", "One dragon can only blow bubbles. The AI teacher can give her a special lesson, but she'd learn alone.", "Her own way alone, or the same way together?", "Dragon School"], ["The Broken Castle", "A robot knocked down the children's toy castle. It was following one child's instructions.", "Who should rebuild it? Is the robot responsible?", "The Toy Hospital"], ["The Translator Hat", "A new mermaid joins the class. A magic hat lets her talk to everyone, but nobody would learn her language.", "Wear the hat, or learn each other's words?", "The Underwater Kingdom"], ["The Happiness Bubbles", "The funfair robot gives each child a perfect bubble world. One lonely child loves hers.", "Stay in the bubble, or come out to play?", "The Never-Ending Funfair"], ["The Team Picker", "The robot picks perfectly fair building teams for the village. But best friends end up on different sides.", "Fair teams from the robot, or choose for yourselves?", "The Moon Village"], ["The Birthday Surprise", "The robot baker can make the perfect birthday party. But the child wanted friends to plan it, and last year they forgot.", "A perfect party, or one made with care?", "The Cloud Bakery"], ["The Homework Helper", "The robot librarian gives you the answer the moment you are stuck. You would finish fast, but might not learn.", "Ask the robot, or stay stuck a little longer?", "The Jungle Library"], ["The Thank-You Letter", "The robot can write a perfect thank-you letter to your grandma. Your handwriting is very messy.", "The robot's perfect letter, or your messy one?", "The Snow Post Office"], ["The Wilting Plant", "The robot can make the giant's garden perfect. One plant the children grew themselves is wilting.", "Let the robot save it, or look after it yourselves?", "The Giant's Garden"], ["The Lost Puppy", "The ship's puppy is lost. The robot navigator can find it in one minute. The crew made a map to search together.", "Let the robot find it, or search together?", "The Pirate Ship"], ["The Perfect Painting", "A magic brush fixes every mistake in your painting of the singing rocks. If it wins, your class gets a trip.", "Use the brush, or keep your mistakes?", "The Music Mountain"], ["The Secret Diary", "While the animals sleep, the robot could read their diaries to know who is sad, and cheer them up.", "Should the robot read them to help?", "The Sleepy Forest"]];
 const TOOLS=[["My Way", "Subjectivity", "If the robot does it for you, is it still yours?"], ["Who Decides?", "Boundary", "What should the robot decide, and what should people decide?"], ["Answer For It", "Responsibility", "Who will answer for this choice: the robot or us?"], ["Together", "Shared", "Does the robot's help bring people together, or keep them apart?"], ["Leave a Mark", "Patina", "If the robot makes it spotless, what marks of people would be lost?"], ["No Thanks", "Choice", "Can people say “no thanks” to the robot's help?"], ["In Their Shoes", "Empathy", "Who in the story might the robot not notice? How do they feel?"], ["Oops Is OK", "Imperfection", "What good thing could come from getting it wrong?"], ["Lend a Hand", "Care", "Who could the robot help that people might leave behind?"], ["Ask First", "Consent", "Did everyone agree to the robot's help?"], ["The Next Day", "Consequence", "What happens if the robot does this every single day?"], ["Learn It", "Growth", "What will people still know how to do without the robot?"], ["Fair for All", "Fairness", "Is the robot's help fair to everyone, or only to some?"]];
 const CONS=[["Only One", "You must pick one side. No mixing, no “both”!"], ["One Wish", "The robot can only help one time. Where should it help?"], ["Someone Is Sad", "Whatever you choose, one character will be sad. Say who."], ["Not Here", "The character isn't here to choose. Decide for them. Would they agree?"], ["Everyone Agrees", "No voting. Everyone must agree before you finish."], ["Hurry Up!", "The robot says: decide in 2 minutes! Can you still listen to everyone?", 120], ["Swap Sides", "Before you decide, argue for the side you did not choose."], ["Robot Breaks", "The robot stops working halfway. What happens now?"], ["Youngest Decides", "The youngest player has the final say. Everyone else can only advise."], ["Ask the Character", "One player becomes the main character. Ask how they feel first."], ["Secret Vote", "Vote in secret first, then talk. Did anyone change their mind?"], ["Every Day", "Your decision becomes a rule for every day, not just today."], ["Someone New", "A new character arrives and disagrees with you. Listen to them."]];
 const STEPS=["Players","Draw","First choice","Twist","Tool cards","Solutions","Decide","Reflect"];
@@ -143,14 +144,14 @@ function bindChoices(arr){document.querySelectorAll(".seg button").forEach(b=>b.
 const HOW=`<div class="how">
 <h3>How a round works</h3>
 <ol>
-<li><b>Draw</b> a scenario and a dilemma. The scenario is <i>where</i>. The dilemma is <i>what happens</i>. Read them as one question.</li>
+<li><b>Draw a world</b>. Each world comes with its own dilemma. The world is <i>where</i>. The dilemma is <i>what happens</i>. Read them as one question.</li>
 <li><b>First choice</b>: everyone says Robot or Me. Just your gut. 1 minute.</li>
 <li><b>Twist</b>: draw a twist card. Does it change your mind?</li>
 <li><b>Tool cards</b>: each player gets 2 tool cards and keeps 1, in secret.</li>
 <li><b>Solutions</b>: take turns. Use your card to say your own solution. 1 minute each.</li>
 <li><b>Decide</b> together: what does the robot do, and what do people still do? 3 minutes.</li>
 </ol>
-<p>One scenario is one round. Next round, draw new cards.</p>
+<p>One world is one round. Next round, draw a new world.</p>
 <h3>Example round</h3>
 <dl>
 <dt>The question</dt><dd>In <b>The Giant's Garden</b>: a plant the children grew themselves is wilting. Let the robot save it, or look after it yourselves?</dd>
@@ -167,10 +168,10 @@ const ic=(k,c,n)=>`<svg width="${n}" height="${n}" viewBox="0 0 24 24" fill="non
 const art=(k,t)=>`<div class="art"><div class="pic">${ART[t]||""}</div><div class="gem">${ic(k,"#ffffff",20)}</div></div>`;
 const orn='<div class="orn"><i></i><b></b><i></i></div>';
 const scCard=c=>`<div class="card sc flip">${art("sc",c[0])}<h3>${esc(c[0])}</h3>${orn}<p class="body">${esc(c[1])}</p></div>`;
-const diCard=c=>`<div class="card di flip">${art("di",c[0])}<h3>${esc(c[0])}</h3><p class="body">${esc(c[1])}</p>${orn}<p class="q">${esc(c[2])}</p></div>`;
+const diCard=c=>`<div class="card di flip">${art("di",c[0])}<p class="world">In ${esc(c[3].replace(/^The /,"the "))}</p><h3>${esc(c[0])}</h3><p class="body">${esc(c[1])}</p>${orn}<p class="q">${esc(c[2])}</p></div>`;
 const cnCard=c=>`<div class="card cn flip">${art("tw",c[0])}<h3>${esc(c[0])}</h3>${orn}<p class="tq">${esc(c[1])}</p></div>`;
 const toInner=c=>`${art("to",c[0])}<h3>${esc(c[0])}</h3>${orn}<p class="tq">${esc(c[2])}</p><p class="kw">Keyword · ${esc(c[1])}</p>`;
-const BK={scenario:["sc","Scenario"],dilemma:["di","Dilemma"],twist:["cn","Twist"]};
+const BK={scenario:["sc","World"],dilemma:["di","Dilemma"],twist:["cn","Twist"]};
 const backCard=(k,id)=>{const [cl,nm]=BK[k];return `<button class="card back ${cl}" id="${id}"><span class="med">${ic(cl==="cn"?"tw":cl,"#F6EFE1",46)}</span><span class="nm">${nm}</span><span class="tp">Tap to draw</span></button>`};
 
 function render(){
@@ -187,15 +188,13 @@ function render(){
     $("#go").onclick=()=>{S.players=S.players.map((p,i)=>p.trim()||"Player "+(i+1));reset();render()};
   }
   else if(S.step===1){
-    const both=S.scen&&S.dil;
-    a.innerHTML=`<div class="lead"><h2>Draw the question</h2><p>The scenario is <b>where</b>. The dilemma is <b>what happens</b>.</p></div>
-    <div class="row" style="max-width:700px;margin:0 auto">${S.scen?scCard(S.scen):backCard("scenario","drs")}${S.dil?diCard(S.dil):backCard("dilemma","drd")}</div>
-    ${both?question()+`<p class="bridge">Imagine it happening in ${esc(S.scen[0])}. Who is there? What does it look like?</p>`+timer("read",60,"Read and imagine"):""}
-    <div class="bar">${both?`<button id="rs">New scenario</button><button id="rd">New dilemma</button><button class="main" id="next">Next: first choice</button>`:""}</div>`;
-    if($("#drs"))$("#drs").onclick=()=>{S.scen=rnd(SCEN);render()};
-    if($("#drd"))$("#drd").onclick=()=>{S.dil=rnd(DIL);render()};
-    if(both){$("#rs").onclick=()=>{S.scen=rnd(SCEN.filter(x=>x!==S.scen));render()};$("#rd").onclick=()=>{S.dil=rnd(DIL.filter(x=>x!==S.dil));render()};
-      bindTimer("read",60);$("#next").onclick=()=>go(2)}
+    a.innerHTML=`<div class="lead"><h2>Draw a world</h2><p>Each world comes with its own problem.</p></div>
+    <div class="row" style="max-width:700px;margin:0 auto">${S.scen?scCard(S.scen)+diCard(S.dil):backCard("scenario","drs")}</div>
+    ${S.scen?question()+`<p class="bridge">Imagine it happening in ${esc(S.scen[0])}. Who is there? What does it look like?</p>`+timer("read",60,"Read and imagine"):""}
+    <div class="bar">${S.scen?`<button id="rs">Draw another world</button><button class="main" id="next">Next: first choice</button>`:""}</div>`;
+    const pick=ex=>{const i=SCEN.indexOf(rnd(SCEN.filter(x=>x!==ex)));S.scen=SCEN[i];S.dil=DIL[i];S.tm={};stop();render()};
+    if($("#drs"))$("#drs").onclick=()=>pick(null);
+    if(S.scen){$("#rs").onclick=()=>pick(S.scen);bindTimer("read",60);$("#next").onclick=()=>go(2)}
   }
   else if(S.step===2){
     const done=S.gut.filter(Boolean).length===S.players.length;

@@ -1,6 +1,6 @@
-# Robot or Me? — HFD Card Game
+# WonderWorlds
 
-A card game and half-day workshop for children around age 10. Players decide what a helpful robot should do, and what people should still do themselves.
+A card game and half-day workshop for children around age 10. Each of 13 worlds comes with its own dilemma. Players decide what a helpful robot should do, and what people should still do themselves: robot or me?
 
 Part of *Human-Focused Design in the Age of AI*.
 
